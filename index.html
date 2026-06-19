@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Reader for Blind</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="https://unpkg.com/tesseract.js@2.1.5/dist/tesseract.min.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="nav-left">
+
+            <h2 class="logo">Smart Reader</h2>
+
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#reader">Reader</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </div>
+
+        <div>
+
+            <button class="btn" onclick="startListening()">
+                🎤 Assistant
+            </button>
+
+            <button class="btn" onclick="toggleTheme()">
+                🌙 Theme
+            </button>
+
+        </div>
+
+    </nav>
+
+    <section id="home" class="hero">
+
+        <h1>📷 Smart Reader for Blind</h1>
+
+        <p>
+            Convert images into text, translate into Hindi,
+            and listen through speech assistance.
+        </p>
+
+        <button class="btn" onclick="startGuide()">
+            Get Started
+        </button>
+
+    </section>
+
+    <div class="container">
+
+        <div id="features" class="features">
+
+            <div class="feature-card">
+                <h3>📷 Camera Support</h3>
+                <p>Capture image directly from camera.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>🔍 OCR Recognition</h3>
+                <p>Extract text from images.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>🌍 Translation</h3>
+                <p>English to Hindi translation.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>🔊 Speech Output</h3>
+                <p>Listen to extracted content.</p>
+            </div>
+
+        </div>
+
+        <div id="reader" class="card">
+
+            <h2>Smart Reader Tool</h2>
+
+            <br>
+
+            <button class="btn" onclick="startGuide()">▶ Start Guide</button>
+            <button class="btn" onclick="startCamera()">📷 Open Camera</button>
+            <button class="btn" onclick="captureImage()">📸 Capture</button>
+            <button class="btn" onclick="startListening()">🎤 Voice Assistant</button>
+
+            <br><br>
+
+            <video id="camera" autoplay style="display:none;"></video>
+
+            <input type="file" id="imageInput">
+
+            <button class="btn" onclick="processImage()">
+                Convert & Speak 🔊
+            </button>
+
+            <img id="preview">
+
+            <progress id="progressBar" value="0" max="100"></progress>
+
+            <p id="loading"></p>
+
+            <div class="box">
+                <h3>English Text</h3>
+                <p id="englishText"></p>
+            </div>
+
+            <div class="box">
+                <h3>Hindi Text</h3>
+                <p id="hindiText"></p>
+            </div>
+
+            <div style="margin-top:20px;">
+
+                <button class="btn" onclick="replaySpeech()">🔊 Play</button>
+
+                <button class="btn" onclick="pauseSpeech()">
+                    ⏸ Pause
+                </button>
+
+                <button class="btn" onclick="resumeSpeech()">
+                    ▶ Resume
+                </button>
+
+                <button class="btn" onclick="speechSynthesis.cancel()">
+                    ⏹ Stop
+                </button>
+
+            </div>
+
+        </div>
+
+        <section id="about" class="card">
+
+            <h2>About Project</h2>
+
+            <br>
+
+            <p>
+                Smart Reader for Blind helps visually impaired users
+                read printed text using OCR, translation and speech
+                synthesis technology.
+            </p>
+
+        </section>
+
+    </div>
+
+    <footer id="contact">
+
+        <h3>Developed by Rishu Raj</h3>
+
+        <p>Smart Reader for Blind © 2026</p>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
